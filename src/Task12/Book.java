@@ -1,10 +1,28 @@
 package Task12;
 
-public class Book {
+public class Book implements Comparable<Book> {
     private final String title;
     private final String author;
     private final int price;
     private static int edition;
+    private int isbn;
+
+    public String GetTitle()
+    {
+        return title;
+    }
+
+    public String GetAuthor()
+    {
+        return author;
+    }
+
+    public int GetPrice()
+    {
+        return price;
+    }
+
+
 
     public Book(String title, String author, int price) {
         this.title = title;
@@ -43,5 +61,10 @@ public class Book {
     @Override
     public Book clone() {
         return new Book(this);
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return  Integer.compare(this.isbn, o.isbn);
     }
 }

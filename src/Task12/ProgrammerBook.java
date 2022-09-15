@@ -8,6 +8,12 @@ public class ProgrammerBook extends Book{
         super(other);
     }
 
+    public ProgrammerBook(String language, int level, String title, String author, int price){
+        super(title, author, price);
+        this.language = language;
+        this.level = level;
+    }
+
     @Override
     public String toString() {
         return language + " of level " + level + "; " + super.toString();
